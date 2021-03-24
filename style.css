@@ -12,6 +12,10 @@ a.btn {
   @apply md:w-11/12 lg:w-8/12 mx-auto mb-12;
 }
 
+.absolute-centered {
+  @apply absolute top-1/2 xs:left-1/2 transform xs:-translate-x-1/2 -translate-y-1/2;
+}
+
 .text-shadow {
   text-shadow: 1px 1px #222;
 }
