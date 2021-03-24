@@ -1,0 +1,729 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Debut</title>
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.css" type="text/css" />
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" type="text/css" />
+    <script src="https://unpkg.com/swiper/swiper-bundle.js"></script>
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script src="script.js" async defer></script>
+    <link rel="stylesheet" href="output.css" type="text/css">
+</head>
+
+<body>
+    <section class="w-full">
+        <div id="closeTogglesOverlay" class="z-10 absolute w-full h-full hidden" onclick="closeToggles()"></div>
+        <div class="bg-primary text-white h-10 relative flex content-center">
+            <div class="mx-auto items-center flex slides">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 mr-2" fill="#fff" viewBox="0 0 24 24">
+                    <path
+                        d="M12 2c5.514 0 10 4.486 10 10s-4.486 10-10 10-10-4.486-10-10 4.486-10 10-10zm0-2c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm3.222 18.917c5.666-5.905-.629-10.828-5.011-7.706l1.789 1.789h-6v-6l1.832 1.832c7.846-6.07 16.212 4.479 7.39 10.085z" />
+                </svg>
+                <p class="text-sm"> 14 days free return</p>
+            </div>
+            <div class="mx-auto items-center flex slides">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 mr-2" fill="#fff" fill-rule="evenodd"
+                    viewBox="0 0 24 24" clip-rule="evenodd">
+                    <path
+                        d="M5 11v1h8v-7h-10v-1c0-.552.448-1 1-1h10c.552 0 1 .448 1 1v2h4.667c1.117 0 1.6.576 1.936 1.107.594.94 1.536 2.432 2.109 3.378.188.312.288.67.288 1.035v4.48c0 1.089-.743 2-2 2h-1c0 1.656-1.344 3-3 3s-3-1.344-3-3h-4c0 1.656-1.344 3-3 3s-3-1.344-3-3h-1c-.552 0-1-.448-1-1v-6h-2v-2h7v2h-3zm3 5.8c.662 0 1.2.538 1.2 1.2 0 .662-.538 1.2-1.2 1.2-.662 0-1.2-.538-1.2-1.2 0-.662.538-1.2 1.2-1.2zm10 0c.662 0 1.2.538 1.2 1.2 0 .662-.538 1.2-1.2 1.2-.662 0-1.2-.538-1.2-1.2 0-.662.538-1.2 1.2-1.2zm-3-2.8h-10v2h.765c.549-.614 1.347-1 2.235-1 .888 0 1.686.386 2.235 1h5.53c.549-.614 1.347-1 2.235-1 .888 0 1.686.386 2.235 1h1.765v-4.575l-1.711-2.929c-.179-.307-.508-.496-.863-.496h-4.426v6zm1-5v3h5l-1.427-2.496c-.178-.312-.509-.504-.868-.504h-2.705zm-16-3h8v2h-8v-2z" />
+                </svg>
+                <p class="text-sm"> Free shipping on orders over $30</p>
+            </div>
+        </div>
+        <header class="w-12/12 md:w-11/12 h-20 md:h-24 mx-auto flex justify-between items-center py-6 relative">
+            <a id="logo" href="index.html" class="w-32 ml-4 md:ml-0"><img
+                    src="https://cdn.shopify.com/s/files/1/0260/1061/5830/files/store-logo_180x.png?v=1583938824"
+                    alt=""></a>
+            <nav id="headerNav" class="hidden z-20 absolute w-full md:w-auto md:static bg-white top-20 md:block">
+                <ul class="md:pb-0 pb-28 bg-white md:flex">
+                    <li class="py-3 px-5 border-t md:border-0"><a href="index.html" class="hover:underline">Home</a>
+                    </li>
+                    <li class="border-t md:border-0">
+                        <div class="hover:underline flex justify-between py-3 px-5" onclick="toggleDropdown()">Shop
+                            <svg viewBox="0 0 9 9" class="hidden md:block w-2 ml-2">
+                                <path
+                                    d="M8.542 2.558a.625.625 0 0 1 0 .884l-3.6 3.6a.626.626 0 0 1-.884 0l-3.6-3.6a.625.625 0 1 1 .884-.884L4.5 5.716l3.158-3.158a.625.625 0 0 1 .884 0z">
+                                </path>
+                            </svg>
+                            <svg viewBox="0 0 14 14" class="block w-3 md:hidden">
+                                <path
+                                    d="M3.871.604c.44-.439 1.152-.439 1.591 0l5.515 5.515s-.049-.049.003.004l.082.08c.439.44.44 1.153 0 1.592l-5.6 5.6a1.125 1.125 0 0 1-1.59-1.59L8.675 7 3.87 2.195a1.125 1.125 0 0 1 0-1.59z">
+                                </path>
+                            </svg>
+                        </div>
+                        <ul id="dropdownNav" class="absolute bg-white hidden md:pr-2">
+                            <li class="font-semibold flex md:hidden border-t md:border-0">
+                                <div class="border-r pr-8 w-3 py-5 px-5" onclick="toggleDropdown()">
+                                    <svg viewBox="0 0 14 14" class="block w-3 transform rotate-180 md:hidden">
+                                        <path
+                                            d="M3.871.604c.44-.439 1.152-.439 1.591 0l5.515 5.515s-.049-.049.003.004l.082.08c.439.44.44 1.153 0 1.592l-5.6 5.6a1.125 1.125 0 0 1-1.59-1.59L8.675 7 3.87 2.195a1.125 1.125 0 0 1 0-1.59z">
+                                        </path>
+                                    </svg>
+                                </div>
+                                <div class="my-auto py-3 px-5">Shop</div>
+                            </li>
+                            <li class="border-t md:border-0"><a href="products.html"
+                                    class="py-3 px-5 block hover:underline">All</a></li>
+                            <li class="border-t md:border-0"><a href="" class="py-3 px-5 block hover:underline">Studio
+                                    Bag</a>
+                            </li>
+                            <li class="border-t md:border-0"><a href="" class="py-3 px-5 block hover:underline">Stratus
+                                    Backpack</a></li>
+                            <li class="border-t md:border-0 md:relative" id="dropSub">
+                                <div class="hidden md:flex">
+                                    <a href="product.html" class="py-3 px-5 hover:underline hidden md:flex">Dance
+                                        Bag Nylon</a>
+                                    <svg viewBox="0 0 9 9" class="transform -rotate-90 md:block w-2 mx-2">
+                                        <path
+                                            d="M8.542 2.558a.625.625 0 0 1 0 .884l-3.6 3.6a.626.626 0 0 1-.884 0l-3.6-3.6a.625.625 0 1 1 .884-.884L4.5 5.716l3.158-3.158a.625.625 0 0 1 .884 0z">
+                                        </path>
+                                    </svg>
+                                </div>
+                                <div class="hover:underline md:hidden flex justify-between py-3 px-5"
+                                    onclick="toggleSubDropdown()">Dance
+                                    Bag Nylon
+                                    <svg viewBox="0 0 9 9" class="hidden md:block w-2 ml-2">
+                                        <path
+                                            d="M8.542 2.558a.625.625 0 0 1 0 .884l-3.6 3.6a.626.626 0 0 1-.884 0l-3.6-3.6a.625.625 0 1 1 .884-.884L4.5 5.716l3.158-3.158a.625.625 0 0 1 .884 0z">
+                                        </path>
+                                    </svg>
+                                    <svg viewBox="0 0 14 14" class="block w-3 md:hidden">
+                                        <path
+                                            d="M3.871.604c.44-.439 1.152-.439 1.591 0l5.515 5.515s-.049-.049.003.004l.082.08c.439.44.44 1.153 0 1.592l-5.6 5.6a1.125 1.125 0 0 1-1.59-1.59L8.675 7 3.87 2.195a1.125 1.125 0 0 1 0-1.59z">
+                                        </path>
+                                    </svg>
+                                </div>
+                                <ul id="subDropdown"
+                                    class="absolute md:w-max h-full md:h-auto top-0 md:left-48 bg-white hidden">
+                                    <li class="font-semibold flex md:hidden border-t md:border-0"
+                                        onclick="toggleSubDropdown()">
+                                        <div class="border-r pr-8 w-3 py-5 px-5">
+                                            <svg viewBox="0 0 14 14" class="block w-3 transform rotate-180 md:hidden">
+                                                <path
+                                                    d="M3.871.604c.44-.439 1.152-.439 1.591 0l5.515 5.515s-.049-.049.003.004l.082.08c.439.44.44 1.153 0 1.592l-5.6 5.6a1.125 1.125 0 0 1-1.59-1.59L8.675 7 3.87 2.195a1.125 1.125 0 0 1 0-1.59z">
+                                                </path>
+                                            </svg>
+                                        </div>
+                                        <div class="my-auto py-3 px-5">Dance Bag Nylon</div>
+                                    </li>
+                                    <li class="border-t md:border-0"><a href="product.html"
+                                            class="py-3 px-5 block hover:underline">Nude waterproof</a></li>
+                                    <li class="border-t md:border-0"><a href="product.html"
+                                            class="py-3 px-5 block hover:underline">Black</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="border-t md:border-0"><a href=""
+                                    class="py-3 px-5 block hover:underline">Cumulus</a>
+                            </li>
+                            <li class="border-t md:border-0"><a href="" class="py-3 px-5 block hover:underline">New
+                                    Arrivals</a></li>
+                        </ul>
+                    </li>
+                    <li class="py-3 px-5 border-t md:border-0"><a href="" class="hover:underline">Stories</a>
+                    </li>
+                    <li class="py-3 px-5 border-t md:border-0"><a href="about.html" class="hover:underline">About</a>
+                    </li>
+                    <li class="py-3 px-5 border-t md:border-0"><a href="" class="hover:underline">Contact</a>
+                    </li>
+                </ul>
+            </nav>
+            <div id="searchDiv"
+                class="md:m-0 border rounded-sm mx-auto left-0 right-0 w-11/12 md:w-full absolute md:top-7 md:right-0 z-20 hidden">
+                <div class="flex">
+                    <input autocomplete="off" class="px-2 z-20 py-2 w-full" type="search" name="search" id="search"
+                        placeholder="Search">
+                    <button class="p-2 flex bg-white" onclick="toggleSearch()">
+                        <svg viewBox="0 0 40 40" id="searchCross" class="w-4 self-center">
+                            <path fill="#333"
+                                d="M23.868 20.015L39.117 4.78c1.11-1.108 1.11-2.77 0-3.877-1.109-1.108-2.773-1.108-3.882 0L19.986 16.137 4.737.904C3.628-.204 1.965-.204.856.904c-1.11 1.108-1.11 2.77 0 3.877l15.249 15.234L.855 35.248c-1.108 1.108-1.108 2.77 0 3.877.555.554 1.248.831 1.942.831s1.386-.277 1.94-.83l15.25-15.234 15.248 15.233c.555.554 1.248.831 1.941.831s1.387-.277 1.941-.83c1.11-1.109 1.11-2.77 0-3.878L23.868 20.015z">
+                            </path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+            <div id="headerIcons" class="flex justify-end w-32">
+                <div class="flex">
+                    <button class="p-2 mr-2 flex" onclick="toggleSearch()">
+                        <svg viewBox="0 0 37 40" id="mfg" class="w-5">
+                            <path
+                                d="M35.6 36l-9.8-9.8c4.1-5.4 3.6-13.2-1.3-18.1-5.4-5.4-14.2-5.4-19.7 0-5.4 5.4-5.4 14.2 0 19.7 2.6 2.6 6.1 4.1 9.8 4.1 3 0 5.9-1 8.3-2.8l9.8 9.8c.4.4.9.6 1.4.6s1-.2 1.4-.6c.9-.9.9-2.1.1-2.9zm-20.9-8.2c-2.6 0-5.1-1-7-2.9-3.9-3.9-3.9-10.1 0-14C9.6 9 12.2 8 14.7 8s5.1 1 7 2.9c3.9 3.9 3.9 10.1 0 14-1.9 1.9-4.4 2.9-7 2.9z">
+                            </path>
+                        </svg>
+                    </button>
+                </div>
+                <a href="cart.html" class="p-2 relative">
+                    <svg viewBox="0 0 37 40" class="w-5">
+                        <path
+                            d="M36.5 34.8L33.3 8h-5.9C26.7 3.9 23 .8 18.5.8S10.3 3.9 9.6 8H3.7L.5 34.8c-.2 1.5.4 2.4.9 3 .5.5 1.4 1.2 3.1 1.2h28c1.3 0 2.4-.4 3.1-1.3.7-.7 1-1.8.9-2.9zm-18-30c2.2 0 4.1 1.4 4.7 3.2h-9.5c.7-1.9 2.6-3.2 4.8-3.2zM4.5 35l2.8-23h2.2v3c0 1.1.9 2 2 2s2-.9 2-2v-3h10v3c0 1.1.9 2 2 2s2-.9 2-2v-3h2.2l2.8 23h-28z">
+                        </path>
+                    </svg>
+                    <p class="absolute z-2 bg-primary rounded-full w-4 top-0 right-0 text-xs text-white text-center">1
+                    </p>
+                </a>
+                <button class="md:hidden p-2 ml-2 mr-4 md:mr-0" onclick="toggleNav()">
+                    <svg viewBox="0 0 37 40" id="burger" class="w-5">
+                        <path
+                            d="M33.5 25h-30c-1.1 0-2-.9-2-2s.9-2 2-2h30c1.1 0 2 .9 2 2s-.9 2-2 2zm0-11.5h-30c-1.1 0-2-.9-2-2s.9-2 2-2h30c1.1 0 2 .9 2 2s-.9 2-2 2zm0 23h-30c-1.1 0-2-.9-2-2s.9-2 2-2h30c1.1 0 2 .9 2 2s-.9 2-2 2z">
+                        </path>
+                    </svg>
+                    <svg viewBox="0 0 40 40" id="cross" class="w-5 hidden">
+                        <path
+                            d="M23.868 20.015L39.117 4.78c1.11-1.108 1.11-2.77 0-3.877-1.109-1.108-2.773-1.108-3.882 0L19.986 16.137 4.737.904C3.628-.204 1.965-.204.856.904c-1.11 1.108-1.11 2.77 0 3.877l15.249 15.234L.855 35.248c-1.108 1.108-1.108 2.77 0 3.877.555.554 1.248.831 1.942.831s1.386-.277 1.94-.83l15.25-15.234 15.248 15.233c.555.554 1.248.831 1.941.831s1.387-.277 1.941-.83c1.11-1.109 1.11-2.77 0-3.878L23.868 20.015z">
+                        </path>
+                    </svg>
+                </button>
+            </div>
+        </header>
+        <section class="w-full relative mb-12">
+            <img class="object-cover md:object-contain w-full h-80 md:h-full"
+                src="https://en.light-point.com/images/bordlamper_banner.jpg" alt="">
+            <div class="absolute text-center m-auto md:mx-8 md:left-1/2 right-0 left-0 top-0 bottom-0 h-48 md:h-48">
+                <div class="bg-black bg-opacity-30 md:bg-opacity-0 py-4 text-white text-shadow">
+                    <p class="text-2xl md:text-3xl font-bold mb-2">Overskrift</p>
+                    <p class="w-72 mx-auto">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas vel mi at
+                        odio dapibus consequat eu eu tortor.</p>
+                    <div class="mt-4"><a class="btn bg-primary text-sm mx-auto" href="">se mere her</a></div>
+                </div>
+            </div>
+        </section>
+        <section class="mb-12">
+            <div class="grid grid-cols-2 md:h-96 grid-rows-2 md:grid-cols-3 sm:gap-6">
+                <div class="relative row-span-2 col-span-2"><img class="object-cover md:h-full h-72 w-full"
+                        src="https://images.pexels.com/photos/2058499/pexels-photo-2058499.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500">
+                    <div class="absolute top-5 w-5/12 m-4 sm:m-5 md:m-8">
+                        <div class="text-xl font-bold text-primary">UDSALG</div>
+                        <p class="text-lg sm:text-2xl my-4 font-bold primary">Spar op til 30% på alle
+                            valentins-buketter
+                        </p>
+                        <a href="" class="underline">Se udvalget her</a>
+                    </div>
+                </div>
+                <div class="relative md:h-full"><img class="object-cover w-full h-40 md:h-full"
+                        src="https://images.pexels.com/photos/6641247/pexels-photo-6641247.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500">
+                    <div class="absolute p-2 inset-0 m-4 bg-primary bg-opacity-30">
+                        <p class="sm:text-xl text-center my-4 font-semibold text-white">Tørrede buketter</p>
+                        <a href="" class="underline block text-center text-white">Se udvalget her</a>
+                    </div>
+                </div>
+                <div class="relative md:h-full"><img class="object-cover w-full h-40 md:h-full"
+                        src="https://images.pexels.com/photos/2306275/pexels-photo-2306275.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500">
+                    <div class="absolute p-2 flex- flex-wrap inset-0 m-4 bg-primary bg-opacity-30">
+                        <p class="sm:text-xl text-center my-4 font-semibold text-white">Brudebuketter</p>
+                        <a href="" class="underline block text-center justify-end text-white">Se udvalget her</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="container w-10/12 md:w-full">
+            <div class="grid grid-cols-1 xs:grid-cols-2 md:grid-cols-4 gap-6">
+                <div class="mx-auto">
+                    <svg xmlns:xlink="http://www.w3.org/1999/xlink" class="w-8 h-8 mx-auto mb-4">
+                        <image class="w-full h-full"
+                            xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAcCAYAAAB2+A+pAAACD0lEQVRIS+3WS6hOURTA8d8tiogQSZJHKelSlCIDTAwkj0gmiERSzIQSClNKHolkxsAjGUhhIANFXZIiXSkliogSV7RqXx1f56lP7sCuMznr8V9r77XXXh3y1xIcxKACed3fn7ELV1oNOnI8jMNj7MX9EsLWJDtaojMz+ZmKl1m9PPBVfMHKirQOJ/n2Cr0LGIjFZeBVOIEpeN0m8Gg8wWac7/WZzXhYUtiN0zUOsW7G4WoDDqSE3sePLPgMJmI+frQZHJxbeJ6C+AVegGuYjqc1oKHSJOPQn4wuLMLNiGQAHuFs2o6a3Mbg8BvHuA6dAT6E5ZiLb3WpyS7Udzaw6Y87uBjggPVrYNwO1Z4ARyHF2f52wXO8P8SWFHEePHbsGKZVRBYNqqsXPAEvKgxCHudzu0BvXqqT8RV+Qt79H1y2S/90qzfhAd5iSIryI0ZiBk7ir5xxXLv4luJUAm/EZfSkr+3gbnzCPazH9QReiOjzszAYcUPKVuOqjqnkLt5hTeaJi6f0HIZjTt600RJFY3A7Olb46FvgG6lCs9ldwj4cx+yCtL9jWY22W5hx9O24Mm8SIOakEamKOzGpAPw1FVsEULVytzrAqzPz1gqMTeCo3BgYeldUdQTZdOWC46qMavEUA9qONEGMyche4VlTap8ormgK2yqG9z9IrNAkhvwj8SyuxX4Mbaf3El8fsOcnyzmW6tBokBEAAAAASUVORK5CYII=">
+                        </image>
+                    </svg>
+                    <p>Fragt fra 39 kr.</p>
+                </div>
+                <div class="mx-auto">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" class="w-8 h-8 mx-auto mb-4">
+                        <path
+                            d="M413.505 91.951L133.49 371.966l-98.995-98.995c-4.686-4.686-12.284-4.686-16.971 0L6.211 284.284c-4.686 4.686-4.686 12.284 0 16.971l118.794 118.794c4.686 4.686 12.284 4.686 16.971 0l299.813-299.813c4.686-4.686 4.686-12.284 0-16.971l-11.314-11.314c-4.686-4.686-12.284-4.686-16.97 0z">
+                        </path>
+                    </svg>
+                    <p>Gratis fragt over 499 kr.</p>
+                </div>
+                <div class="mx-auto">
+                    <svg xmlns:xlink="http://www.w3.org/1999/xlink" class="w-8 h-8 mx-auto mb-4">
+                        <image class="w-full h-full"
+                            xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABEAAAAeCAYAAADKO/UvAAAB9ElEQVRIS5XVS8iNURTG8d+XS8pIyWXmltsA5Z5ckpSZjAiFkHwDE0xEklxyyUSZKJEBSRkoQkqRKJdC9AlJUgyMJBQt7bfe3va7z3d2nclea//Pc9Z61jo9yucQtnfI6e0pJIzGW6zAx0xe3B/AlBLkFEZhdQYwFC+xD+fbICPxDrPxKgM5ielYhr9tkCMY06JiJu4lSPxcOcjwpGJeRsVAPMJVHKwU5iAlFTuxETPwuw1SUjEWL7Ac9+t1aioJFROxKlPMm3iPbc1YHRIqImkRnjYS1+IEJuN7CRIqImllRsWz1I2cN/sqJSUV8XBI+tQhk3AbWytISUXu24fhIS5jb0A6qWhCBuEGviUz/nfs/tT3XC1yKs5gVmrAj8qxfZiQyY5OjWvc78DuNFOfS46NWExwqIxH1YnRjxosxpOS2SIWY/4J8/E6JU/FA2zGlZJPqtgWrMHSdBGFf4yz9aHrpCSMFRsrJnUw7qTNti52R67SzdlZgEtpl/zBueTiJfiZA1Tdqccu4k1SEl3oxVx8aQM0ISPSAI5PDy9gIZ6XAE3IHkzD4bT+1uNaJ0AdMiCp2IVjOI2j/QHUIWH542kewhsb+guoQ24lJ8YSDn/86hYS6zA68gFz8LUbQKUk5mRTsnn8q3V9wmx3Uz2ud/06PfgHZGRiwXMKO3sAAAAASUVORK5CYII=">
+                        </image>
+                    </svg>
+                    <p>Levering 1-3 hverdage</p>
+                </div>
+                <div class="mx-auto">
+                    <svg xmlns:xlink="http://www.w3.org/1999/xlink" class="w-8 h-8 mx-auto mb-4">
+                        <image class="w-full h-full"
+                            xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAARCAYAAADHeGwwAAABKklEQVQ4T7XUvyvFYRTH8ddd2JBiYHIHySiDH8VqYLBJMTEo/wL+ABSTwUT5D1DKIFJWA0nd1UAZWJCkc/t+63tvpvtcp57h+306n/dzzvN5Tklt9OIcK7io22vos1TIasclfjCB94YU65JyQAtO0I9RPDVDPDQCEOsAMxjHfbPEc8AG1jCLqwTxD8SqiTj9M7oShIupFRxhG295BXtYxmJiezqzFq9m4lOoRAVxwccYwEgTLjhAodeBodxFbZlFo6qwaLW8hOjGI9aL76AHN3jANL4SAJG6i+EiIH4O4hpzOEsEzGOnHhCarfhMFI/0BWz+BWiCdlViH+X/ApRxF0PzPwB9OMUrJlMA8fpjduURvh/Len+bzbaXFMAStgqAMEZYPAbnIb5j7xeH4TFARWiVpwAAAABJRU5ErkJggg==">
+                        </image>
+                    </svg>
+                    <p>12 dages fuld returret</p>
+                </div>
+            </div>
+        </section>
+        <section class="container w-10/12 md:w-8/12 lg:w-10/12">
+            <div class="lg:flex">
+                <div class="swiper-container styleSwiper max-w-sm md:h-full md:w-full">
+                    <div class="swiper-wrapper">
+                        <img class="swiper-slide"
+                            src="//cdn.shopify.com/s/files/1/0260/1061/5830/files/homepage-section-2_300x300.jpg?v=1583788087"
+                            alt="">
+                        <img class="swiper-slide"
+                            src="//cdn.shopify.com/s/files/1/0260/1061/5830/files/homepage-section-3_300x300.jpg?v=1583788105"
+                            alt="">
+                        <img class="swiper-slide"
+                            src="//cdn.shopify.com/s/files/1/0260/1061/5830/files/homepage-section-4_300x300.jpg?v=1583788122"
+                            alt="">
+                    </div>
+                    <div class="swiper-pagination swiper-pagination-white bottom-0 left-1/2"></div>
+                </div>
+                <div class="mt-6 lg:m-0 lg:ml-6 lg:my-auto">
+                    <div class="mb-4">
+                        <h3 class="font-semibold mb-2">Luxury materials</h3>
+                        <p class="text-sm lg:text-base">Constructed from luxury nylons, leathers, and custom hardware,
+                            featuring
+                            sport
+                            details such as hidden
+                            breathing vents, waterproof + antimicrobial linings, and more.</p>
+                    </div>
+                    <div class="mb-4">
+                        <h3 class="font-semibold mb-2">Thoughtful design</h3>
+                        <p class="text-sm lg:text-base">Your bag is your ultimate companion and should be thoughtfully
+                            designed with
+                            your
+                            lifestyle in mind.
+                            Keep up with your love of exercise and travel in comfort and style.</p>
+                    </div>
+                    <div class="">
+                        <h3 class="font-semibold mb-2">Well-crafted</h3>
+                        <p class="text-sm lg:text-base">We design versatile and smart-looking sports bags that can
+                            transition from
+                            street
+                            to
+                            fitness studio, business meeting to dinner, and everywhere in between</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="container w-10/12">
+            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+                <a href="">
+                    <div class="relative">
+                        <img class="relative opacity-100 hover:opacity-0"
+                            src="https://img01.ztat.net/article/spp-media-p1/1684a624f3fe334ebc55492ccec19e71/a6d2bd7ca80645fc85b56d586b37a4b5.jpg?imwidth=1800&filter=packshot"
+                            alt="">
+                        <div
+                            class="absolute bottom-0 w-full h-full flex transition duration-500 hover:opacity-100 opacity-0">
+                            <img class="absolute"
+                                src="https://img01.ztat.net/article/spp-media-p1/209a99b6011f37908a8084c39ae05e62/d9e57d90cb88411183f54a46652dfe9c.jpg?imwidth=1800"
+                                alt="">
+                            <div class="bg-white p-2 z-10 relative mt-auto">37</div>
+                            <div class="bg-white p-2 z-10 relative mt-auto">38</div>
+                        </div>
+                    </div>
+                    <div class="p-2">
+                        <p class="font-semibold text-lg">RAID</p>
+                        <p>KENDALL - Plateustøvler - black</p>
+                        <p>429,00 kr</p>
+                    </div>
+                </a>
+            </div>
+        </section>
+        <section class="container w-10/12">
+            <div class="grid grid-cols-2 lg:grid-cols-4 gap-6">
+                <div>
+                    <a href="" class="">
+                        <div class="relative overflow-hidden">
+                            <img class="w-full h-full hover:scale-110 transition duration-500 transform"
+                                src="https://www.magasin.dk/dw/image/v2/BFCS_PRD/on/demandware.static/-/Library-Sites-mdn-library/default/dwfa3ef7e1/CLP/Bolig/Brand%20spots/AW20_CLP_HAY.jpg?sw=450"
+                                alt="">
+                            <span
+                                class="absolute rounded-full bg-primary text-white font-bold text-3xl w-18 h-18 px-2 py-5 top-5 left-5">20%</span>
+                        </div>
+                        <div class="bg-gray-100"><img class="w-16 py-4 m-auto"
+                                src="https://www.magasin.dk/on/demandware.static/-/Library-Sites-mdn-library/default/dwf54db19d/CLP/Bolig/Logoer/Hay.svg"
+                                alt=""></div>
+                        <p class="border-b border-black italic primary font-semibold my-2 w-max mx-auto">Shop her</p>
+                    </a>
+                </div>
+                <div>
+                    <a href="" class="">
+                        <div class="relative overflow-hidden">
+                            <img class="w-full h-full hover:scale-110 transition duration-500 transform"
+                                src="https://www.magasin.dk/dw/image/v2/BFCS_PRD/on/demandware.static/-/Library-Sites-mdn-library/default/dwfa3ef7e1/CLP/Bolig/Brand%20spots/AW20_CLP_HAY.jpg?sw=450"
+                                alt="">
+                            <span
+                                class="absolute rounded-full bg-primary text-white font-bold text-3xl w-18 h-18 px-2 py-5 top-5 left-5">20%</span>
+                        </div>
+                        <div class="bg-gray-100"><img class="w-16 py-4 m-auto"
+                                src="https://www.magasin.dk/on/demandware.static/-/Library-Sites-mdn-library/default/dwf54db19d/CLP/Bolig/Logoer/Hay.svg"
+                                alt=""></div>
+                        <p class="border-b border-black italic primary font-semibold my-2 w-max mx-auto">Shop her</p>
+                    </a>
+                </div>
+                <div>
+                    <a href="" class="">
+                        <div class="relative overflow-hidden">
+                            <img class="w-full h-full hover:scale-110 transition duration-500 transform"
+                                src="https://www.magasin.dk/dw/image/v2/BFCS_PRD/on/demandware.static/-/Library-Sites-mdn-library/default/dwfa3ef7e1/CLP/Bolig/Brand%20spots/AW20_CLP_HAY.jpg?sw=450"
+                                alt="">
+                            <span
+                                class="absolute rounded-full bg-primary text-white font-bold text-3xl w-18 h-18 px-2 py-5 top-5 left-5">20%</span>
+                        </div>
+                        <div class="bg-gray-100"><img class="w-16 py-4 m-auto"
+                                src="https://www.magasin.dk/on/demandware.static/-/Library-Sites-mdn-library/default/dwf54db19d/CLP/Bolig/Logoer/Hay.svg"
+                                alt=""></div>
+                        <p class="border-b border-black italic primary font-semibold my-2 w-max mx-auto">Shop her</p>
+                    </a>
+                </div>
+                <div>
+                    <a href="" class="">
+                        <div class="relative overflow-hidden">
+                            <img class="w-full h-full hover:scale-110 transition duration-500 transform"
+                                src="https://www.magasin.dk/dw/image/v2/BFCS_PRD/on/demandware.static/-/Library-Sites-mdn-library/default/dwfa3ef7e1/CLP/Bolig/Brand%20spots/AW20_CLP_HAY.jpg?sw=450"
+                                alt="">
+                            <span
+                                class="absolute rounded-full bg-primary text-white font-bold text-3xl w-18 h-18 px-2 py-5 top-5 left-5">20%</span>
+                        </div>
+                        <div class="bg-gray-100"><img class="w-16 py-4 m-auto"
+                                src="https://www.magasin.dk/on/demandware.static/-/Library-Sites-mdn-library/default/dwf54db19d/CLP/Bolig/Logoer/Hay.svg"
+                                alt=""></div>
+                        <p class="border-b border-black italic primary font-semibold my-2 w-max mx-auto">Shop her</p>
+                    </a>
+                </div>
+            </div>
+        </section>
+        <section class="container w-10/12">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 text-center font-semibold uppercase text-white">
+                <div class="relative">
+                    <img class="object-cover w-full"
+                        src="//cdn.shopify.com/s/files/1/0972/7150/files/IMG_2101_300x.jpg?v=1612364206" alt="">
+                    <div
+                        class="border-2 border-white bg-black bg-opacity-10 absolute inset-0 m-2">
+                    </div>
+                    <div
+                        class="absolute inset-0 flex flex-col justify-between w-3/4 h-40 m-auto self-center p-4">
+                        <p class="mb-2 text-3xl">lækre mesh sæt</p>
+                        <div class="h-12 mx-auto"><a class="btn bg-primary text-sm" href="">se mere her</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="relative">
+                    <img class="object-cover w-full"
+                        src="//cdn.shopify.com/s/files/1/0972/7150/files/IMG_3769_300x.jpg?v=1612950660" alt="">
+                    <div
+                        class="border-2 border-white bg-black bg-opacity-10 absolute inset-0 m-2">
+                    </div>
+                    <div
+                        class="absolute inset-0 flex flex-col justify-between w-3/4 h-40 m-auto self-center p-4">
+                        <p class="mb-2 text-3xl">smykker</p>
+                        <div class="h-12 mx-auto"><a class="btn bg-primary text-sm" href="">se mere her</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="container w-10/12">
+            <div class="grid grid-cols-2 sm:grid-cols-4 gap-6">
+                <a class="block" href="/collections...">
+                    <img src="//cdn.shopify.com/s/files/1/0972/7150/files/CopenhagenShoes-logo_720x.png?v=1611673077 720w"
+                        alt="">
+                </a>
+                <a class="block" href="/collections...">
+                    <img src="//cdn.shopify.com/s/files/1/0972/7150/files/Liberte_Essentiel_LOGO_f1e146be-94b6-4e3f-906f-0b8fcdd5ec1f_720x.jpg?v=1591362562 720w"
+                        alt="">
+                </a>
+                <a class="block self-center" href="/collections...">
+                    <img src="//cdn.shopify.com/s/files/1/0972/7150/files/neo_noir_720x.png?v=1611673185 720w" alt="">
+                </a>
+                <a class="block" href="/collections...">
+                    <img src="//cdn.shopify.com/s/files/1/0972/7150/files/noella_720x.jpg?v=1591362562 720w" alt="">
+                </a>
+            </div>
+        </section>
+        <section class="w-full mb-12 mx-auto">
+            <div class="grid grid-cols-1 md:grid-cols-3 text-center font-semibold text-white md:h-64">
+                <div class="relative">
+                    <img class="object-cover object-left h-full xs:w-full"
+                        src="https://sportsbuddy.dk/cache/9/9/3/9/1/3/sammenlign-fit-600x600x100.jpg" alt="">
+                    <div class="bg-black bg-opacity-20 absolute inset-0"></div>
+                    <div
+                        class="absolute inset-0 flex flex-col justify-center sm:justify-between m-auto w-3/4 h-56 self-center p-4">
+                        <p class="mb-2 text-2xl">Sammenlign</p>
+                        <p class="mb-6">Find det ur der passer til dine behov</p>
+                        <div class="h-12 mx-auto"><a class="btn bg-primary text-sm" href="">se mere her</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="relative">
+                    <img class="object-cover object-left h-full xs:w-full"
+                        src="https://sportsbuddy.dk/cache/9/9/3/9/1/4/veryfit-app-fit-600x600x100.jpg" alt="">
+                    <div class="bg-black bg-opacity-20 absolute inset-0">
+                    </div>
+                    <div
+                        class="absolute inset-0 flex flex-col justify-center sm:justify-between m-auto w-3/4 h-56 self-center p-4">
+                        <p class="mb-2 text-2xl">Veryfit app</p>
+                        <p class="mb-6">Udforsk vores app og se alle funktioner</p>
+                        <div class="h-12 mx-auto"><a class="btn bg-primary text-sm" href="">se mere her</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="relative">
+                    <img class="object-cover object-left h-full xs:w-full"
+                        src="https://sportsbuddy.dk/cache/9/9/3/9/1/5/veryfit-app-fit-600x600x100.jpg" alt="">
+                    <div class="bg-black bg-opacity-20 absolute inset-0">
+                    </div>
+                    <div
+                        class="absolute inset-0 flex flex-col justify-center sm:justify-between m-auto w-3/4 h-56 self-center p-4">
+                        <p class="mb-2 text-2xl">Børneur</p>
+                        <p class="mb-6">Se vores nye Veryfit Kids til børn</p>
+                        <div class="h-12 mx-auto"><a class="btn bg-primary text-sm" href="">se mere her</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="container w-10/12">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 text-center">
+                <div class="bg-gray-100 shadow z-10 w-full mt-16">
+                    <a class="" href="">
+                        <div class="-mt-16 z-20 mx-auto">
+                            <img class="object-cover mx-auto rounded-full w-36 h-36"
+                                src="https://dyreverdenen.dk/cache/1/1/7/9/8/1/1/kat-fit-500x500x100.webp" alt="">
+                            <p class="my-2 text-2xl">Produktkategori</p>
+                            <p class="mb-4 mx-4">Se vores produkter til katte... og til kattelskeren</p>
+                            <div class="mb-4"><a class="btn bg-primary text-sm mx-auto" href="">se udvalget</a></div>
+                        </div>
+                    </a>
+                </div>
+                <div class="bg-gray-100 shadow z-10 w-full mt-16">
+                    <a class="" href="">
+                        <div class="-mt-16 z-20 mx-auto">
+                            <img class="object-cover mx-auto rounded-full w-36 h-36"
+                                src="https://dyreverdenen.dk/cache/1/1/7/9/8/1/1/kat-fit-500x500x100.webp" alt="">
+                            <p class="my-2 text-2xl">Produktkategori</p>
+                            <p class="mb-4 mx-4">Se vores produkter til katte... og til kattelskeren</p>
+                            <div class="mb-4"><a class="btn bg-primary text-sm mx-auto" href="">se udvalget</a></div>
+                        </div>
+                    </a>
+                </div>
+                <div class="bg-gray-100 shadow z-10 w-full mt-16">
+                    <a class="" href="">
+                        <div class="-mt-16 z-20 mx-auto">
+                            <img class="object-cover mx-auto rounded-full w-36 h-36"
+                                src="https://dyreverdenen.dk/cache/1/1/7/9/8/1/1/kat-fit-500x500x100.webp" alt="">
+                            <p class="my-2 text-2xl">Produktkategori</p>
+                            <p class="mb-4 mx-4">Se vores produkter til katte... og til kattelskeren</p>
+                            <div class="mb-4"><a class="btn bg-primary text-sm mx-auto" href="">se udvalget</a></div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </section>
+        <section class="container w-10/12 ">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <a class="block relative" href="">
+                    <img class="w-full mx-auto" src="https://rows.dk/cache/1/6/8/2/9/0/0/fit-500x1000x100.webp" alt="">
+                    <div class="absolute m-auto top-0 bottom-0 right-0 left-0 w-40 h-12 bg-white flex">
+                        <p class="m-auto uppercase text-xl">dame</p>
+                    </div>
+                </a>
+                <a class="block relative" href="">
+                    <img class="w-full mx-auto" src="https://rows.dk/cache/1/6/8/2/8/9/8/fit-500x1000x100.webp" alt="">
+                    <div class="absolute m-auto top-0 bottom-0 right-0 left-0 w-40 h-12 bg-white flex">
+                        <p class="m-auto uppercase text-xl">pige</p>
+                    </div>
+                </a>
+                <a class="block relative" href="index.html">
+                    <img class="w-full mx-auto" src="https://rows.dk/cache/1/6/8/2/8/9/1/fit-500x1000x100.webp" alt="">
+                    <div class="absolute m-auto top-0 bottom-0 right-0 left-0 w-40 h-12 bg-white flex">
+                        <p class="m-auto uppercase text-xl">dreng</p>
+                    </div>
+                </a>
+            </div>
+        </section>
+        <section class="w-full mb-12">
+            <div class="bg-gradient p-8">
+                <div class="bg-white p-8 sm:w-2/3 mx-auto">
+                    <p class="uppercase font-bold text-lg text-center">nyheder og gode tilbud direkte i din indbakke</p>
+                    <p class="text-center my-4 text-sm">Tilmeld dig vores nyhedsbrev og bliv den første til at modtage
+                        nyheder, eksklusive rabatkoder, konkurrencer, kampagner og gode tilbud ved fødselsdag, udsalg og
+                        Black Friday.</p>
+                    <form action="" class="sm:flex md:block mx-auto" id="newsletterForm" validation>
+                        <input class="border border-gray-300 p-3 w-full" type="email" name="" id="newsletter"
+                            placeholder="Email address">
+                        <button class="btn bg-primary mt-2 md:mt-2 sm:mt-0 sm:w-1/3 md:w-full w-full h-12"
+                            type="submit"><img id="newsLoadSVG" class="z-10 h-12 m-auto hidden" src="/loader.svg"
+                                alt="">
+                            <p id="newsP" class="p-3">SUBSCRIBE</p>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </section>
+        <section class="w-full sm:w-10/12 mb-12 mx-auto">
+            <img class="object-cover h-full mx-auto"
+                src="https://mmd.ucn.dk/class/mmda0919/1081537/Platformers/assets/img/hero.png" alt="">
+            <div class="mx-auto -mt-44 text-white uppercase text-center">
+                <p class="font-bold text-2xl md:text-3xl px-6">weekend sale</p>
+                <p class="my-2 md:my-4 px-6">save up to 40% on pixel graphics games</p>
+                <a href="" class="btn z-10 relative mx-auto text-sm">check our sale</a>
+            </div>
+            <div class="w-10/12 mx-auto mt-6 grid grid-cols-1 xs:grid-cols-2 gap-6">
+                <a class="bg-white block border-2 border-primary" href="">
+                    <img src="https://mmd.ucn.dk/class/mmda0919/1081537/Platformers/assets/img/stardew-valley.jpg"
+                        alt="Stardew valley">
+                    <div class="grid grid-cols-5 m-2">
+                        <h4 class="text-sm sm:text-base text-primary font-bold col-span-5">Stardew Valley</h4>
+                        <p class="text-xs col-start-5 justify-self-end uppercase">eur</p>
+                        <p class="self-end">PC</p>
+                        <div class="justify-self-end col-start-5 flex">
+                            <p class="justify-self-end mr-2 self-end line-through text-gray-600">
+                                10.99</p>
+                            <p class="justify-self-end text-primary text-lg">8.15</p>
+                        </div>
+                    </div>
+                </a>
+                <a class="bg-white block border-2 border-primary" href="">
+                    <img src="https://mmd.ucn.dk/class/mmda0919/1081537/Platformers/assets/img/xDasher.jpg"
+                        alt="xDasher">
+                    <div class="grid grid-cols-5 m-2">
+                        <h4 class="text-sm sm:text-base text-primary font-bold col-span-5">xDasher</h4>
+                        <p class="text-xs col-start-5 justify-self-end uppercase">eur</p>
+                        <p class="self-end">PC</p>
+                        <div class="justify-self-end col-start-5 flex">
+                            <p class="justify-self-end mr-2 self-end line-through text-gray-600">
+                                5.10</p>
+                            <p class="justify-self-end text-primary text-lg">4.10</p>
+                        </div>
+                    </div>
+                </a>
+                <a class="bg-white block border-2 border-primary" href="">
+                    <img src="https://mmd.ucn.dk/class/mmda0919/1081537/Platformers/assets/img/verdict-guilty.jpg"
+                        alt="Verdict Guilty">
+                    <div class="grid grid-cols-5 m-2">
+                        <h4 class="text-sm sm:text-base text-primary font-bold col-span-5">Verdict Guilty</h4>
+                        <p class="text-xs col-start-5 justify-self-end uppercase">eur</p>
+                        <p class="self-end">PC</p>
+                        <div class="justify-self-end col-start-5 flex">
+                            <p class="justify-self-end mr-2 self-end line-through text-gray-600">
+                                8.25</p>
+                            <p class="justify-self-end text-primary text-lg">7.00</p>
+                        </div>
+                    </div>
+                </a>
+                <a class="bg-white block border-2 border-primary" href="">
+                    <img src="https://mmd.ucn.dk/class/mmda0919/1081537/Platformers/assets/img/deathroids.jpg"
+                        alt="Deathroids">
+                    <div class="grid grid-cols-5 m-2">
+                        <h4 class="text-sm sm:text-base text-primary font-bold col-span-5">Deathroids</h4>
+                        <p class="text-xs col-start-5 justify-self-end uppercase">eur</p>
+                        <p class="self-end">PC</p>
+                        <div class="justify-self-end col-start-5 flex">
+                            <p class="justify-self-end mr-2 self-end line-through text-gray-600">
+                                3.00</p>
+                            <p class="justify-self-end text-primary text-lg">Free</p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </section>
+    </section>
+    <!-- Secret frontpage -->
+    <!-- Delete This vvv -->
+    <div>
+        <a href="index.html" class="z-20 fixed right-0 bottom-0 bg-yellow-300">To the frontpage</a>
+    </div>
+    <!-- Delete This ^^^ -->
+    <!-- Secret frontpage -->
+    <footer class="bg-gray-100 mt-4">
+        <div class="pt-10 w-10/12 mx-auto">
+            <div class="md:flex justify-between">
+                <div class="mb-6">
+                    <p class="font-bold py-4">Overskrift</p>
+                    <div class="">
+                        <a class="block hover:underline py-4 md:py-2 md:mr-8" href="">Search</a>
+                        <a class="block hover:underline py-4 md:py-2 md:mr-8" href="">Shipping and Return Policy</a>
+                        <a class="block hover:underline py-4 md:py-2 md:mr-8" href="">Terms of Services</a>
+                        <a class="block hover:underline py-4 md:py-2" href="">Contact</a>
+                    </div>
+                </div>
+                <div class="mb-6">
+                    <p class="font-bold py-4">Overskrift</p>
+                    <div class="">
+                        <a class="block hover:underline py-4 md:py-2 md:mr-8" href="">Search</a>
+                        <a class="block hover:underline py-4 md:py-2 md:mr-8" href="">Shipping and Return Policy</a>
+                        <a class="block hover:underline py-4 md:py-2 md:mr-8" href="">Terms of Services</a>
+                        <a class="block hover:underline py-4 md:py-2" href="">Contact</a>
+                    </div>
+                </div>
+                <div class="mb-6">
+                    <p class="font-bold py-4">Overskrift</p>
+                    <div class="">
+                        <a class="block hover:underline py-4 md:py-2 md:mr-8" href="">Search</a>
+                        <a class="block hover:underline py-4 md:py-2 md:mr-8" href="">Shipping and Return Policy</a>
+                        <a class="block hover:underline py-4 md:py-2 md:mr-8" href="">Terms of Services</a>
+                        <a class="block hover:underline py-4 md:py-2" href="">Contact</a>
+                    </div>
+                </div>
+            </div>
+            <div class="mb-8 md:w-1/2">
+                <p class="font-bold py-4">Newsletter</p>
+                <form action="" class="sm:flex md:block" id="newsletterForm" validation>
+                    <input class="border border-gray-300 p-3 w-full" type="email" name="" id="newsletter"
+                        placeholder="Email address">
+                    <button class="btn bg-primary mt-2 md:mt-2 sm:mt-0 sm:w-1/3 md:w-full w-full h-12"
+                        type="submit"><img id="newsLoadSVG" class="z-10 h-12 m-auto hidden" src="/loader.svg"
+                            alt="">
+                        <p id="newsP" class="p-3">SUBSCRIBE</p>
+                    </button>
+                </form>
+            </div>
+            <div class="border-t-2 mt-8 md:flex">
+                <div class="md:w-1/2 md:mr-10">
+                    <div class="w-24 mx-auto md:ml-0 my-6">
+                        <select class="border border-gray-500 p-2" name="currency" id="">
+                            <option value="CAD">CAD $</option>
+                            <option value="AUS">AUS $</option>
+                            <option value="AUS">EUR &euro;</option>
+                            <option value="GBP">GBP £</option>
+                            <option value="USD">USD $</option>
+                        </select>
+                    </div>
+                    <div class="flex justify-between mx-auto md:ml-0 my-6 w-40">
+                        <img class="w-12" src="https://www.flaticon.com/svg/vstatic/svg/196/196561.svg?token=exp=1614697210~hmac=e62c8f501eb5c0f76f589b436bc77e2c" alt="">
+                        <img class="w-12" src="https://www.flaticon.com/svg/vstatic/svg/196/196578.svg?token=exp=1614697194~hmac=d69786c4e21f81e69718d5863b2e9b83" alt="">
+                        <img class="w-12" src="https://www.flaticon.com/svg/vstatic/svg/196/196566.svg?token=exp=1614697378~hmac=db4f3d3548f13dd8e30bda926b68eeb5" alt="">
+                    </div>
+                </div>
+                <div class="md:w-1/2 md:ml-10">
+                    <div class="flex justify-between mx-auto md:mx-0 my-6 w-40">
+                        <svg class="w-6" viewBox="0 0 20 20">
+                            <path fill="#444"
+                                d="M18.05.811q.439 0 .744.305t.305.744v16.637q0 .439-.305.744t-.744.305h-4.732v-7.221h2.415l.342-2.854h-2.757v-1.83q0-.659.293-1t1.073-.342h1.488V3.762q-.976-.098-2.171-.098-1.634 0-2.635.964t-1 2.72V9.47H7.951v2.854h2.415v7.221H1.413q-.439 0-.744-.305t-.305-.744V1.859q0-.439.305-.744T1.413.81H18.05z">
+                            </path>
+                        </svg>
+                        <svg class="w-6" viewBox="0 0 20 20">
+                            <path fill="#444"
+                                d="M19.551 4.208q-.815 1.202-1.956 2.038 0 .082.02.255t.02.255q0 1.589-.469 3.179t-1.426 3.036-2.272 2.567-3.158 1.793-3.963.672q-3.301 0-6.031-1.773.571.041.937.041 2.751 0 4.911-1.671-1.284-.02-2.292-.784T2.456 11.85q.346.082.754.082.55 0 1.039-.163-1.365-.285-2.262-1.365T1.09 7.918v-.041q.774.408 1.773.448-.795-.53-1.263-1.396t-.469-1.864q0-1.019.509-1.997 1.487 1.854 3.596 2.924T9.81 7.184q-.143-.509-.143-.897 0-1.63 1.161-2.781t2.832-1.151q.815 0 1.569.326t1.284.917q1.345-.265 2.506-.958-.428 1.386-1.732 2.18 1.243-.163 2.262-.611z">
+                            </path>
+                        </svg>
+                        <svg class="w-6" viewBox="0 0 20 20">
+                            <path fill="#444"
+                                d="M9.958.811q1.903 0 3.635.744t2.988 2 2 2.988.744 3.635q0 2.537-1.256 4.696t-3.415 3.415-4.696 1.256q-1.39 0-2.659-.366.707-1.147.951-2.025l.659-2.561q.244.463.903.817t1.39.354q1.464 0 2.622-.842t1.793-2.305.634-3.293q0-2.171-1.671-3.769t-4.257-1.598q-1.586 0-2.903.537T5.298 5.897 4.066 7.775t-.427 2.037q0 1.268.476 2.22t1.427 1.342q.171.073.293.012t.171-.232q.171-.61.195-.756.098-.268-.122-.512-.634-.707-.634-1.83 0-1.854 1.281-3.183t3.354-1.329q1.83 0 2.854 1t1.025 2.61q0 1.342-.366 2.476t-1.049 1.817-1.561.683q-.732 0-1.195-.537t-.293-1.269q.098-.342.256-.878t.268-.915.207-.817.098-.732q0-.61-.317-1t-.927-.39q-.756 0-1.269.695t-.512 1.744q0 .39.061.756t.134.537l.073.171q-1 4.342-1.22 5.098-.195.927-.146 2.171-2.513-1.122-4.062-3.44T.59 10.177q0-3.879 2.744-6.623T9.957.81z">
+                            </path>
+                        </svg>
+                        <svg class="w-6" viewBox="0 0 512 512">
+                            <path fill="#444"
+                                d="M256 49.5c67.3 0 75.2.3 101.8 1.5 24.6 1.1 37.9 5.2 46.8 8.7 11.8 4.6 20.2 10 29 18.8s14.3 17.2 18.8 29c3.4 8.9 7.6 22.2 8.7 46.8 1.2 26.6 1.5 34.5 1.5 101.8s-.3 75.2-1.5 101.8c-1.1 24.6-5.2 37.9-8.7 46.8-4.6 11.8-10 20.2-18.8 29s-17.2 14.3-29 18.8c-8.9 3.4-22.2 7.6-46.8 8.7-26.6 1.2-34.5 1.5-101.8 1.5s-75.2-.3-101.8-1.5c-24.6-1.1-37.9-5.2-46.8-8.7-11.8-4.6-20.2-10-29-18.8s-14.3-17.2-18.8-29c-3.4-8.9-7.6-22.2-8.7-46.8-1.2-26.6-1.5-34.5-1.5-101.8s.3-75.2 1.5-101.8c1.1-24.6 5.2-37.9 8.7-46.8 4.6-11.8 10-20.2 18.8-29s17.2-14.3 29-18.8c8.9-3.4 22.2-7.6 46.8-8.7 26.6-1.3 34.5-1.5 101.8-1.5m0-45.4c-68.4 0-77 .3-103.9 1.5C125.3 6.8 107 11.1 91 17.3c-16.6 6.4-30.6 15.1-44.6 29.1-14 14-22.6 28.1-29.1 44.6-6.2 16-10.5 34.3-11.7 61.2C4.4 179 4.1 187.6 4.1 256s.3 77 1.5 103.9c1.2 26.8 5.5 45.1 11.7 61.2 6.4 16.6 15.1 30.6 29.1 44.6 14 14 28.1 22.6 44.6 29.1 16 6.2 34.3 10.5 61.2 11.7 26.9 1.2 35.4 1.5 103.9 1.5s77-.3 103.9-1.5c26.8-1.2 45.1-5.5 61.2-11.7 16.6-6.4 30.6-15.1 44.6-29.1 14-14 22.6-28.1 29.1-44.6 6.2-16 10.5-34.3 11.7-61.2 1.2-26.9 1.5-35.4 1.5-103.9s-.3-77-1.5-103.9c-1.2-26.8-5.5-45.1-11.7-61.2-6.4-16.6-15.1-30.6-29.1-44.6-14-14-28.1-22.6-44.6-29.1-16-6.2-34.3-10.5-61.2-11.7-27-1.1-35.6-1.4-104-1.4z">
+                            </path>
+                            <path fill="#444"
+                                d="M256 126.6c-71.4 0-129.4 57.9-129.4 129.4s58 129.4 129.4 129.4 129.4-58 129.4-129.4-58-129.4-129.4-129.4zm0 213.4c-46.4 0-84-37.6-84-84s37.6-84 84-84 84 37.6 84 84-37.6 84-84 84z">
+                            </path>
+                            <circle cx="390.5" cy="121.5" r="30.2"></circle>
+                        </svg>
+                    </div>
+                    <div class="mt-6 pb-10">
+                        <p class="text-xs text-center md:text-left">&copy; 2021, Nomads Powered by Eagle Media</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    </section>
+</body>
+
+</html>

@@ -1,0 +1,128 @@
+@tailwind base;
+@tailwind components;
+.btn {
+  @apply text-white font-bold uppercase rounded-sm bg-primary hover:bg-gray-800;
+}
+
+a.btn {
+  @apply w-max block px-4 py-3;
+}
+
+.container {
+  @apply md:w-11/12 lg:w-8/12 mx-auto mb-12;
+}
+
+.text-shadow {
+  text-shadow: 1px 1px #222;
+}
+
+.text-3xs {
+  font-size: 0.6rem;
+}
+
+.hero-h1 {
+  text-shadow: 0 0 4px #222;
+}
+
+.bg-gradient {
+  background: radial-gradient(
+    circle,
+    rgb(59, 93, 143) 0%,
+    rgba(55, 73, 99, 1) 100%
+  );
+}
+
+.swiper-slide-thumb-active {
+  border: 2px solid rgb(122, 122, 122);
+}
+
+.added-to-cart {
+  animation-duration: 400ms;
+  transition-timing-function: ease-in;
+  animation-name: slide-down;
+}
+
+@keyframes slide-down {
+  0% {
+    transform: translate3d(0, -100%, 0);
+  }
+  100% {
+    transform: none;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .animation-custom {
+    display: block;
+    animation-duration: 400ms;
+    transition: ease-in;
+    animation-name: scale-y;
+    transform-origin: top;
+  }
+  @keyframes scale-y {
+    0% {
+      transform: scaleY(0);
+    }
+    100% {
+      transform: scaleY(100%);
+    }
+  }
+  .animation-custom-2 {
+    animation-duration: 400ms;
+    transition: ease-in;
+    animation-name: scale-y-up;
+    transform-origin: top;
+  }
+  @keyframes scale-y-up {
+    0% {
+      transform: scaleY(100%);
+    }
+    100% {
+      transform: scaleY(0);
+      display: none;
+    }
+  }
+  .dropdown-custom {
+    width: 100%;
+    top: 0;
+    animation-duration: 400ms;
+    transition: ease-in;
+    animation-name: dropdown-in;
+    transform-origin: right;
+  }
+  @keyframes dropdown-in {
+    0% {
+      transform: translate3d(100%, 0, 0);
+    }
+    100% {
+      transform: none;
+    }
+  }
+  .dropdown-custom-2 {
+    width: 100%;
+    top: 0;
+    animation-duration: 400ms;
+    transition: ease-in;
+    animation-name: dropdown-out;
+    transform-origin: right;
+  }
+  @keyframes dropdown-out {
+    0% {
+      transform: none;
+    }
+    100% {
+      transform: translate3d(100%, 0, 0);
+    }
+  }
+}
+
+@media screen and (min-width: 768px) {
+  #sub-dropdown {
+    display: none;
+  }
+  #drop-sub:hover #sub-dropdown {
+    display: block;
+  }
+}
+
+@tailwind utilities;

@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Debut - about</title>
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.css" type="text/css"/>
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" type="text/css"/>
+    <script src="https://unpkg.com/swiper/swiper-bundle.js"></script>
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script src="script.js" async defer></script>
+    <link rel="stylesheet" href="output.css" type="text/css">
+</head>
+
+<body>
+    <section class="w-full">
+        <div id="closeTogglesOverlay" class="z-10 absolute w-full h-full hidden" onclick="closeToggles()"></div>
+        <div class="bg-primary text-white h-10 relative flex content-center">
+            <div class="mx-auto items-center flex slides">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 mr-2" fill="#fff" viewBox="0 0 24 24">
+                    <path
+                        d="M12 2c5.514 0 10 4.486 10 10s-4.486 10-10 10-10-4.486-10-10 4.486-10 10-10zm0-2c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm3.222 18.917c5.666-5.905-.629-10.828-5.011-7.706l1.789 1.789h-6v-6l1.832 1.832c7.846-6.07 16.212 4.479 7.39 10.085z" />
+                </svg>
+                <p class="text-sm"> 14 days free return</p>
+            </div>
+            <div class="mx-auto items-center flex slides">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 mr-2" fill="#fff" fill-rule="evenodd"
+                    viewBox="0 0 24 24" clip-rule="evenodd">
+                    <path
+                        d="M5 11v1h8v-7h-10v-1c0-.552.448-1 1-1h10c.552 0 1 .448 1 1v2h4.667c1.117 0 1.6.576 1.936 1.107.594.94 1.536 2.432 2.109 3.378.188.312.288.67.288 1.035v4.48c0 1.089-.743 2-2 2h-1c0 1.656-1.344 3-3 3s-3-1.344-3-3h-4c0 1.656-1.344 3-3 3s-3-1.344-3-3h-1c-.552 0-1-.448-1-1v-6h-2v-2h7v2h-3zm3 5.8c.662 0 1.2.538 1.2 1.2 0 .662-.538 1.2-1.2 1.2-.662 0-1.2-.538-1.2-1.2 0-.662.538-1.2 1.2-1.2zm10 0c.662 0 1.2.538 1.2 1.2 0 .662-.538 1.2-1.2 1.2-.662 0-1.2-.538-1.2-1.2 0-.662.538-1.2 1.2-1.2zm-3-2.8h-10v2h.765c.549-.614 1.347-1 2.235-1 .888 0 1.686.386 2.235 1h5.53c.549-.614 1.347-1 2.235-1 .888 0 1.686.386 2.235 1h1.765v-4.575l-1.711-2.929c-.179-.307-.508-.496-.863-.496h-4.426v6zm1-5v3h5l-1.427-2.496c-.178-.312-.509-.504-.868-.504h-2.705zm-16-3h8v2h-8v-2z" />
+                </svg>
+                <p class="text-sm"> Free shipping on orders over $30</p>
+            </div>
+        </div>
+        <header class="w-12/12 md:w-11/12 h-20 md:h-24 mx-auto flex justify-between items-center py-6 relative">
+            <a id="logo" href="index.html" class="w-32 ml-4 md:ml-0"><img
+                    src="https://cdn.shopify.com/s/files/1/0260/1061/5830/files/store-logo_180x.png?v=1583938824"
+                    alt=""></a>
+            <nav id="headerNav" class="hidden z-20 absolute w-full md:w-auto md:static bg-white top-20 md:block">
+                <ul class="md:pb-0 pb-28 bg-white md:flex">
+                    <li class="py-3 px-5 border-t md:border-0"><a href="index.html" class="hover:underline">Home</a>
+                    </li>
+                    <li class="border-t md:border-0">
+                        <div class="hover:underline flex justify-between py-3 px-5" onclick="toggleDropdown()">Shop
+                            <svg viewBox="0 0 9 9" class="hidden md:block w-2 ml-2">
+                                <path
+                                    d="M8.542 2.558a.625.625 0 0 1 0 .884l-3.6 3.6a.626.626 0 0 1-.884 0l-3.6-3.6a.625.625 0 1 1 .884-.884L4.5 5.716l3.158-3.158a.625.625 0 0 1 .884 0z">
+                                </path>
+                            </svg>
+                            <svg viewBox="0 0 14 14" class="block w-3 md:hidden">
+                                <path
+                                    d="M3.871.604c.44-.439 1.152-.439 1.591 0l5.515 5.515s-.049-.049.003.004l.082.08c.439.44.44 1.153 0 1.592l-5.6 5.6a1.125 1.125 0 0 1-1.59-1.59L8.675 7 3.87 2.195a1.125 1.125 0 0 1 0-1.59z">
+                                </path>
+                            </svg>
+                        </div>
+                        <ul id="dropdownNav" class="absolute bg-white hidden md:pr-2">
+                            <li class="font-semibold flex md:hidden border-t md:border-0">
+                                <div class="border-r pr-8 w-3 py-5 px-5" onclick="toggleDropdown()">
+                                    <svg viewBox="0 0 14 14" class="block w-3 transform rotate-180 md:hidden">
+                                        <path
+                                            d="M3.871.604c.44-.439 1.152-.439 1.591 0l5.515 5.515s-.049-.049.003.004l.082.08c.439.44.44 1.153 0 1.592l-5.6 5.6a1.125 1.125 0 0 1-1.59-1.59L8.675 7 3.87 2.195a1.125 1.125 0 0 1 0-1.59z">
+                                        </path>
+                                    </svg>
+                                </div>
+                                <div class="my-auto py-3 px-5">Shop</div>
+                            </li>
+                            <li class="border-t md:border-0"><a href="products.html"
+                                    class="py-3 px-5 block hover:underline">All</a></li>
+                            <li class="border-t md:border-0"><a href="" class="py-3 px-5 block hover:underline">Studio
+                                    Bag</a>
+                            </li>
+                            <li class="border-t md:border-0"><a href="" class="py-3 px-5 block hover:underline">Stratus
+                                    Backpack</a></li>
+                            <li class="border-t md:border-0 md:relative" id="dropSub">
+                                <div class="hidden md:flex">
+                                    <a href="product.html" class="py-3 px-5 hover:underline hidden md:flex">Dance
+                                        Bag Nylon</a>
+                                    <svg viewBox="0 0 9 9" class="transform -rotate-90 md:block w-2 mx-2">
+                                        <path
+                                            d="M8.542 2.558a.625.625 0 0 1 0 .884l-3.6 3.6a.626.626 0 0 1-.884 0l-3.6-3.6a.625.625 0 1 1 .884-.884L4.5 5.716l3.158-3.158a.625.625 0 0 1 .884 0z">
+                                        </path>
+                                    </svg>
+                                </div>
+                                <div class="hover:underline md:hidden flex justify-between py-3 px-5"
+                                    onclick="toggleSubDropdown()">Dance
+                                    Bag Nylon
+                                    <svg viewBox="0 0 9 9" class="hidden md:block w-2 ml-2">
+                                        <path
+                                            d="M8.542 2.558a.625.625 0 0 1 0 .884l-3.6 3.6a.626.626 0 0 1-.884 0l-3.6-3.6a.625.625 0 1 1 .884-.884L4.5 5.716l3.158-3.158a.625.625 0 0 1 .884 0z">
+                                        </path>
+                                    </svg>
+                                    <svg viewBox="0 0 14 14" class="block w-3 md:hidden">
+                                        <path
+                                            d="M3.871.604c.44-.439 1.152-.439 1.591 0l5.515 5.515s-.049-.049.003.004l.082.08c.439.44.44 1.153 0 1.592l-5.6 5.6a1.125 1.125 0 0 1-1.59-1.59L8.675 7 3.87 2.195a1.125 1.125 0 0 1 0-1.59z">
+                                        </path>
+                                    </svg>
+                                </div>
+                                <ul id="subDropdown"
+                                    class="absolute md:w-max h-full md:h-auto top-0 md:left-48 bg-white hidden">
+                                    <li class="font-semibold flex md:hidden border-t md:border-0"
+                                        onclick="toggleSubDropdown()">
+                                        <div class="border-r pr-8 w-3 py-5 px-5">
+                                            <svg viewBox="0 0 14 14" class="block w-3 transform rotate-180 md:hidden">
+                                                <path
+                                                    d="M3.871.604c.44-.439 1.152-.439 1.591 0l5.515 5.515s-.049-.049.003.004l.082.08c.439.44.44 1.153 0 1.592l-5.6 5.6a1.125 1.125 0 0 1-1.59-1.59L8.675 7 3.87 2.195a1.125 1.125 0 0 1 0-1.59z">
+                                                </path>
+                                            </svg>
+                                        </div>
+                                        <div class="my-auto py-3 px-5">Dance Bag Nylon</div>
+                                    </li>
+                                    <li class="border-t md:border-0"><a href="product.html"
+                                            class="py-3 px-5 block hover:underline">Nude waterproof</a></li>
+                                    <li class="border-t md:border-0"><a href="product.html"
+                                            class="py-3 px-5 block hover:underline">Black</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="border-t md:border-0"><a href=""
+                                    class="py-3 px-5 block hover:underline">Cumulus</a>
+                            </li>
+                            <li class="border-t md:border-0"><a href="" class="py-3 px-5 block hover:underline">New
+                                    Arrivals</a></li>
+                        </ul>
+                    </li>
+                    <li class="py-3 px-5 border-t md:border-0"><a href="" class="hover:underline">Stories</a>
+                    </li>
+                    <li class="py-3 px-5 border-t md:border-0"><a href="about.html" class="hover:underline">About</a>
+                    </li>
+                    <li class="py-3 px-5 border-t md:border-0"><a href="" class="hover:underline">Contact</a>
+                    </li>
+                </ul>
+            </nav>
+            <div id="searchDiv"
+                class="md:m-0 border rounded-sm mx-auto left-0 right-0 w-11/12 md:w-full absolute md:top-7 md:right-0 z-20 hidden">
+                <div class="flex">
+                    <input autocomplete="off" class="px-2 z-20 py-2 w-full" type="search" name="search" id="search"
+                        placeholder="Search">
+                    <button class="p-2 flex bg-white" onclick="toggleSearch()">
+                        <svg viewBox="0 0 40 40" id="searchCross" class="w-4 self-center">
+                            <path fill="#333"
+                                d="M23.868 20.015L39.117 4.78c1.11-1.108 1.11-2.77 0-3.877-1.109-1.108-2.773-1.108-3.882 0L19.986 16.137 4.737.904C3.628-.204 1.965-.204.856.904c-1.11 1.108-1.11 2.77 0 3.877l15.249 15.234L.855 35.248c-1.108 1.108-1.108 2.77 0 3.877.555.554 1.248.831 1.942.831s1.386-.277 1.94-.83l15.25-15.234 15.248 15.233c.555.554 1.248.831 1.941.831s1.387-.277 1.941-.83c1.11-1.109 1.11-2.77 0-3.878L23.868 20.015z">
+                            </path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+            <div id="headerIcons" class="flex justify-end w-32">
+                <div class="flex">
+                    <button class="p-2 mr-2 flex" onclick="toggleSearch()">
+                        <svg viewBox="0 0 37 40" id="mfg" class="w-5">
+                            <path
+                                d="M35.6 36l-9.8-9.8c4.1-5.4 3.6-13.2-1.3-18.1-5.4-5.4-14.2-5.4-19.7 0-5.4 5.4-5.4 14.2 0 19.7 2.6 2.6 6.1 4.1 9.8 4.1 3 0 5.9-1 8.3-2.8l9.8 9.8c.4.4.9.6 1.4.6s1-.2 1.4-.6c.9-.9.9-2.1.1-2.9zm-20.9-8.2c-2.6 0-5.1-1-7-2.9-3.9-3.9-3.9-10.1 0-14C9.6 9 12.2 8 14.7 8s5.1 1 7 2.9c3.9 3.9 3.9 10.1 0 14-1.9 1.9-4.4 2.9-7 2.9z">
+                            </path>
+                        </svg>
+                    </button>
+                </div>
+                <a href="cart.html" class="p-2 relative">
+                    <svg viewBox="0 0 37 40" class="w-5">
+                        <path
+                            d="M36.5 34.8L33.3 8h-5.9C26.7 3.9 23 .8 18.5.8S10.3 3.9 9.6 8H3.7L.5 34.8c-.2 1.5.4 2.4.9 3 .5.5 1.4 1.2 3.1 1.2h28c1.3 0 2.4-.4 3.1-1.3.7-.7 1-1.8.9-2.9zm-18-30c2.2 0 4.1 1.4 4.7 3.2h-9.5c.7-1.9 2.6-3.2 4.8-3.2zM4.5 35l2.8-23h2.2v3c0 1.1.9 2 2 2s2-.9 2-2v-3h10v3c0 1.1.9 2 2 2s2-.9 2-2v-3h2.2l2.8 23h-28z">
+                        </path>
+                    </svg>
+                    <p class="absolute z-2 bg-primary rounded-full w-4 top-0 right-0 text-xs text-white text-center">1
+                    </p>
+                </a>
+                <button class="md:hidden p-2 ml-2 mr-4 md:mr-0" onclick="toggleNav()">
+                    <svg viewBox="0 0 37 40" id="burger" class="w-5">
+                        <path
+                            d="M33.5 25h-30c-1.1 0-2-.9-2-2s.9-2 2-2h30c1.1 0 2 .9 2 2s-.9 2-2 2zm0-11.5h-30c-1.1 0-2-.9-2-2s.9-2 2-2h30c1.1 0 2 .9 2 2s-.9 2-2 2zm0 23h-30c-1.1 0-2-.9-2-2s.9-2 2-2h30c1.1 0 2 .9 2 2s-.9 2-2 2z">
+                        </path>
+                    </svg>
+                    <svg viewBox="0 0 40 40" id="cross" class="w-5 hidden">
+                        <path
+                            d="M23.868 20.015L39.117 4.78c1.11-1.108 1.11-2.77 0-3.877-1.109-1.108-2.773-1.108-3.882 0L19.986 16.137 4.737.904C3.628-.204 1.965-.204.856.904c-1.11 1.108-1.11 2.77 0 3.877l15.249 15.234L.855 35.248c-1.108 1.108-1.108 2.77 0 3.877.555.554 1.248.831 1.942.831s1.386-.277 1.94-.83l15.25-15.234 15.248 15.233c.555.554 1.248.831 1.941.831s1.387-.277 1.941-.83c1.11-1.109 1.11-2.77 0-3.878L23.868 20.015z">
+                        </path>
+                    </svg>
+                </button>
+            </div>
+        </header>
+        <section class="w-11/12 sm:w-10/12 md:w-8/12 lg:w-6/12 mx-auto my-12">
+            <h1 class="text-center font-bold text-3xl mb-2 text-primary">About</h1>
+            <p class="font-semibold text-lg tracking-widest text-center my-6">HANDBAGS REIMAGINED FOR MODERN LIFE</p>
+            <img src="https://cdn.shopify.com/s/files/1/0260/1061/5830/files/page-about-1.png?v=1583785457" alt="">
+            <p class="font-semibold my-6">
+                Nomads is a New York City-based sport bag and accessory company founded in 2015 by CFDA award winning
+                designer Carmen Chen Wu and Aaron Luo to reimagine handbags for modern life.
+            </p>
+            <p class="my-4">We both grew up in Spain to Chinese families. My grandfather was Carmen’s grandmother’s
+                business partner in Spain. They opened the earliest and most successful Chinese restaurants in the
+                country, including one in which the Spanish Royal family dined. But after a few years, we really only
+                met in New York when we both happened to each be looking for a partner to build the next generation's
+                go-to handbag company at the same time. Crazy how life works! </p>
+            <p class="my-4">We both felt that while there were abundant activewear apparel options, the luxury handbag
+                space was neglected. Our goal was very simple, yet groundbreaking. We wanted to create a well-made,
+                versatile and smart sports bags that could transition from street to fitness studio, business meeting to
+                dinner, and everywhere in between.</p>
+            <p class="my-4">To this day, our mission remains simple: to create a lifestyle brand that puts design,
+                versatility, functionality and craftsmanship first. We want to create a set of well-designed products
+                that are far superior to any other bags in the market, ultimately attempting to reinvent the handbag
+                category.</p>
+        </section>
+    </section>
+</body>
+
+</html>
